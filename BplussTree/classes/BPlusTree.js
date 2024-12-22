@@ -7,7 +7,10 @@ class BPlusTree {
         this.order = order;
         this.root = new BPlusTreeNode(true);
     }
+
+/*-----------------------------------------*/
 /*--------------- SEARCH -----------------*/
+/*---------------------------------------*/
     search(key) {
         const leaf = this.findLeafNode(key);
         const index = leaf.keys.indexOf(key);
@@ -29,7 +32,9 @@ class BPlusTree {
         return current;
     }
 
+/*-----------------------------------------*/
 /*--------------- INSERT -----------------*/
+/*---------------------------------------*/
     insert(key, value) {
         this.insertInternal(key, value);
         //this.updateCSV();
@@ -86,8 +91,9 @@ class BPlusTree {
         }
         return null;
     }
-    
+/*------------------------------------------*/
 /*--------------- DISPLAY -----------------*/
+/*----------------------------------------*/
     display() {
         this.displayNode(this.root);
     }
@@ -101,8 +107,9 @@ class BPlusTree {
             }
         }
     }
-
+/*-----------------------------------------*/
 /*--------------- DELETE -----------------*/
+/*---------------------------------------*/
     delete(key) {
         const leaf = this.findLeafNode(key);
         const index = leaf.keys.indexOf(key);
@@ -158,8 +165,9 @@ class BPlusTree {
             }
         }
     }
-
+/*-----------------------------------------*/
 /*--------------- UPDATE -----------------*/
+/*---------------------------------------*/
     update(key, newValue) {
         const leaf = this.findLeafNode(key);
         const index = leaf.keys.indexOf(key);
